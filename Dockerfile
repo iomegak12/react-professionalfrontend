@@ -4,9 +4,11 @@ COPY . /app
 
 WORKDIR /app
 
-CMD ["npm", "install"]
+RUN ["npm", "install"]
 
-CMD ["npm", "build"]
+RUN ["npm", "run", "build"]
+
+RUN ["npm", "install", "http-server", "--save"]
 
 WORKDIR /app/build
 
