@@ -8,4 +8,4 @@ RUN npm install http-server --save
 
 WORKDIR /app
 
-ENTRYPOINT ["http-server"]
+ENTRYPOINT ["./node_modules/.bin/http-server"]
