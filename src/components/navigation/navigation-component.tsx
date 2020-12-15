@@ -41,7 +41,7 @@ const Navigation: React.FC<NavigationProps> = props => {
                 {isAuthenticated && (
                     <li>
                         <Link to="/user-profile" style={{ color: 'yellow' }}>
-                            Welcome {props.userProfile?.userProfileId}
+                            Welcome {props.userProfile?.userProfileId},
                         </Link>
                     </li>
                 )}
