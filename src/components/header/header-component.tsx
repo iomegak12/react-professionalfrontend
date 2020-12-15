@@ -1,4 +1,4 @@
-import { Navigation } from "../navigation"
+import { ConnectedNavigation } from "../navigation"
 
 const Header = () => {
     return (
@@ -9,7 +9,7 @@ const Header = () => {
                     <a className="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template" /></a>
                 </div>
 
-                <Navigation />
+                <ConnectedNavigation />
             </div>
         </div>
     );

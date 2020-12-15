@@ -5,7 +5,8 @@ import { ConnectedCrmSystem } from '../crmsystem';
 import { Footer } from "../footer";
 import { Header } from "../header";
 import { Home } from '../home';
-import { Signin } from '../signin';
+import { CustomerRegistrationForm } from '../register-customer';
+import { ConnectedSignin } from '../signin';
 
 const Layout = () => {
     return (
@@ -24,12 +25,16 @@ const Layout = () => {
                         <ContactUs />
                     </Route>
 
-                    <Route pat="/crm-system">
+                    <Route path="/crm-system">
                         <ConnectedCrmSystem />
                     </Route>
 
                     <Route path="/sign-in">
-                        <Signin />
+                        <ConnectedSignin />
+                    </Route>
+
+                    <Route path="/new-customer">
+                        <CustomerRegistrationForm />
                     </Route>
                 </Switch>
 

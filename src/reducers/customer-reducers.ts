@@ -8,7 +8,7 @@ const customerReducers = {
 
         if (action.type === CustomerActionTypes.FillCustomers) {
             if (action.customers) {
-                nextState = [...state, ...action.customers];
+                nextState = [...action.customers];
             }
         }
 

@@ -68,7 +68,7 @@ const CustomerDetailViewer: React.FC<CustomerDetailViewerProps> = props => {
 
                                         <tr>
                                             <td>Active Status:</td>
-                                            <td>{props.customer?.activeStatus} </td>
+                                            <td>{props.customer?.activeStatus ? "TRUE": "FALSE"} </td>
                                         </tr>
                                     </tbody>
                                 </table>

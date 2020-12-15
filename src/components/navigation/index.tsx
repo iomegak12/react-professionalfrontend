@@ -1,5 +1,5 @@
-import Navigation from "./navigation-component";
+import ConnectedNavigation from "./navigation-component";
 
 export {
-    Navigation
+    ConnectedNavigation
 };

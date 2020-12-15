@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CustomerProfile } from '../../models';
-import { BrowserHistoryService, CustomerService, pushNotificationService } from '../../services';
+import { AuthenticationTokenService, BrowserHistoryService, CustomerService, pushNotificationService } from '../../services';
 import { CustomerMap } from '../../utilities';
 import { Breadcrumb } from '../breadcrumb';
 import { CustomerViewer } from '../customer-viewer';
@@ -10,6 +10,7 @@ import CrmSystemProps from './crmsystem-props';
 
 const MIN_CUSTOMRES = 1;
 const NEW_CUSTOMER_RECORD = "NewCustomerRecord";
+const REDIRECT_TO_HOME_FOR_INVALID_TOKEN = "/sign-in";
 
 interface CrmSystemState {
     customers: CustomerProfile[];
@@ -22,6 +23,21 @@ class CrmSystem extends React.Component<CrmSystemProps, CrmSystemState> {
         this.state = {
             customers: []
         };
+    }
+
+    // TODO: BEFORE REACT LOADS THE COMPONENT, WE NEED TO CHECK THE TOKEN 
+    // REDIRECT TO SIGNIN
+    // DEPRECATED
+    componentWillMount() {
+        const token = AuthenticationTokenService.getAuthToken();
+
+        if (!token) {
+            BrowserHistoryService.navigate(REDIRECT_TO_HOME_FOR_INVALID_TOKEN);
+        }
+    }
+
+    componentDidCatch() {
+        BrowserHistoryService.navigate(REDIRECT_TO_HOME_FOR_INVALID_TOKEN);
     }
 
     componentDidMount() {

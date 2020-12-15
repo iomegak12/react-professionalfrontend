@@ -1,5 +1,5 @@
-import Signin from "./signin-component";
+import ConnectedSignin from "./signin-component";
 
 export {
-    Signin
+    ConnectedSignin
 };

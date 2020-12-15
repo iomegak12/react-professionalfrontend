@@ -1,5 +1,7 @@
 import CustomerProfile from "./customer-profile";
+import UserProfile from "./user-profile";
 
 export {
-    CustomerProfile
+    CustomerProfile,
+    UserProfile
 };
