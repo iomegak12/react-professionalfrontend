@@ -1,15 +1,11 @@
 FROM mhart/alpine-node
 
-COPY . /app
+COPY ./build /app
 
 WORKDIR /app
 
-RUN ["npm", "install"]
+RUN npm install http-server --save
 
-RUN ["npm", "run", "build"]
-
-RUN ["npm", "install", "http-server", "--save"]
-
-WORKDIR /app/build
+WORKDIR /app
 
 ENTRYPOINT ["http-server"]
